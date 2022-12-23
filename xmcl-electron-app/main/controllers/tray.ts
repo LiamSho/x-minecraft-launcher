@@ -80,7 +80,7 @@ export const trayPlugin: ControllerPlugin = function (this: Controller) {
     const path = nativeTheme.shouldUseDarkColors ? dark : light
     if (this.app.platform.name === 'osx') {
       const icon = nativeImage.createFromPath(path)
-      return icon.resize({ width: 20, height: 20 })
+      return icon.resize({ width: 18, height: 18 })
     }
     return path
   }
