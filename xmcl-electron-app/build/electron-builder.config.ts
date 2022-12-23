@@ -48,7 +48,7 @@ export const config: Configuration = {
   },
   dmg: {
     // eslint-disable-next-line no-template-curly-in-string
-    artifactName: 'xmcl-${version}.${ext}',
+    artifactName: 'xmcl-${version}-${arch}.${ext}',
     contents: [
       {
         x: 410,
@@ -69,9 +69,17 @@ export const config: Configuration = {
     target: [
       {
         target: 'zip',
+        arch: [
+          'x64',
+          'arm64',
+        ],
       },
       {
         target: 'dmg',
+        arch: [
+          'x64',
+          'arm64',
+        ],
       },
     ],
   },
