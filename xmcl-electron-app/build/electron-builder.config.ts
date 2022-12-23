@@ -112,12 +112,44 @@ export const config: Configuration = {
     // eslint-disable-next-line no-template-curly-in-string
     artifactName: 'xmcl-${version}-${arch}.${ext}',
     target: process.env.BUILD_TARGET === 'appimage'
-      ? 'AppImage'
+      ? [
+        {
+          target: 'appimage',
+          arch: [
+            'x64',
+            'arm64',
+          ],
+        },
+      ]
       : [
-        'deb',
-        'rpm',
-        'zip',
-        'tar.xz',
+        {
+          target: 'deb',
+          arch: [
+            'x64',
+            'arm64',
+          ],
+        },
+        {
+          target: 'rpm',
+          arch: [
+            'x64',
+            'arm64',
+          ],
+        },
+        {
+          target: 'zip',
+          arch: [
+            'x64',
+            'arm64',
+          ],
+        },
+        {
+          target: 'tar.xz',
+          arch: [
+            'x64',
+            'arm64',
+          ],
+        },
       ],
   },
   snap: {
